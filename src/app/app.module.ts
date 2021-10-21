@@ -9,6 +9,10 @@ import { AboutComponent } from './views/about/about.component';
 import { UsersComponent } from './views/users/users.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { PostsComponent } from './views/posts/posts.component';
+import { UsersService } from './services/users.service';
+import { PostsService } from './services/posts.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SinglePostComponent } from './views/single-post/single-post.component'
 
 @NgModule({
   declarations: [
@@ -18,13 +22,18 @@ import { PostsComponent } from './views/posts/posts.component';
     AboutComponent,
     UsersComponent,
     ProfileComponent,
-    PostsComponent
+    PostsComponent,
+    SinglePostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UsersService,
+    PostsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
